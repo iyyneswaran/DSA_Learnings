@@ -28,3 +28,11 @@ def euclid_original(a, b):
     else:
         return euclid_original(b, a % b)
 print(euclid_original(int(input()), int(input())))
+
+# while loop:
+def euclid_original_while(a, b):
+    if a < b:
+        a, b = b, a
+    while (a % b) != 0:
+        a, b = b, a % b
+    return b
