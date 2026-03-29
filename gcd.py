@@ -1,4 +1,4 @@
-# Optimized GCD 
+#  Minimally Optimized GCD 
 def gcd(x,y):
     cf = []
     for i in range(1, min(x,y)+1):
@@ -16,3 +16,23 @@ def optimized_gcd(a, b):
             gcd_value = i
     return gcd_value
 print(optimized_gcd(int(input()), int(input())))
+
+# optimizing the GCD further by backward iteration:
+def gcd_god(c, d):
+    mgcd = 1
+    for i in range(min(c, d), 1, -1):
+        if c % i == 0 and d % i == 0:
+            mgcd = i
+            break
+    return mgcd
+print(gcd_god(int(input()), int(input())))
+
+# GCD using while loop 
+def gcd_whileLoop(m, n):
+    i = min(m, n)
+    while i > 0:
+        if m % i == 0 and n % i == 0:
+            return i
+        else:
+            i = i - 1
+print(gcd_whileLoop(int(input()), int(input())))
